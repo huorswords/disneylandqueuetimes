@@ -1,0 +1,9 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "QueueTimesApiOptions:BaseAddress": "https://queue-times.com/",
+    "SynchronizationOptions:ConnectionString": "UseDevelopmentStorage=true"
+  }
+}
