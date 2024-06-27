@@ -3,5 +3,6 @@
 public enum KnownParks
 {
     DisneyLandParis = 4,
-    DisneyStudiosParis = 28
+    DisneyStudiosParis = 28,
+    UniversalStudiosJapan = 284
 }

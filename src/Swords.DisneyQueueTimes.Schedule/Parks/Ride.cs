@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace Swords.DisneyQueueTimes.Schedule.Parks;
 
@@ -35,7 +32,7 @@ public sealed class RideSeriesItem
 
 public sealed class RideSeries
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
 
-    public List<RideSeriesItem> Items { get; set; } = new List<RideSeriesItem>();
+    public List<RideSeriesItem> Items { get; set; } = [];
 }

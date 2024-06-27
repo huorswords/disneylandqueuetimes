@@ -1,11 +1,10 @@
 ﻿using System.Collections.Concurrent;
-using System.Threading;
 
 namespace Swords.DisneyQueueTimes.Schedule.Parks;
 
 public sealed class SynchronizationLocker
 {
-    private readonly ConcurrentDictionary<string, SemaphoreSlim> _dictionary = new ConcurrentDictionary<string, SemaphoreSlim>();
+    private readonly ConcurrentDictionary<string, SemaphoreSlim> _dictionary = new();
 
     public void Adquire(string key)
     {
@@ -15,7 +14,7 @@ public sealed class SynchronizationLocker
 
     public void Release(string key)
     {
-        if (_dictionary.TryGetValue(key, out SemaphoreSlim semaphore))
+        if (_dictionary.TryGetValue(key, out SemaphoreSlim? semaphore))
         {
             semaphore.Release();
         }

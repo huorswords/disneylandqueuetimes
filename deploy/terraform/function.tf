@@ -12,12 +12,12 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "DisneyWaitTimes"
+  name     = "ParksWaitTimes"
   location = "WestEurope"
 }
 
 resource "azurerm_storage_account" "sa" {
-  name                     = "disneywaittimesstorage"
+  name                     = "parkswaittimesstor"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
@@ -37,14 +37,14 @@ resource "azurerm_storage_container" "series" {
 }
 
 resource "azurerm_application_insights" "insights" {
-  name                = "DisneyWaitTimesInsights"
+  name                = "ParksWaitTimesInsights"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   application_type    = "web"
 }
 
 resource "azurerm_service_plan" "plan" {
-  name                = "DisneyWaitTimesServicePlan"
+  name                = "ParksWaitTimesServicePlan"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   os_type             = "Linux"
@@ -52,7 +52,7 @@ resource "azurerm_service_plan" "plan" {
 }
 
 resource "azurerm_linux_function_app" "fnc" {
-  name                = "DisneyWaitTimesFunctionApp"
+  name                = "ParksWaitTimesFunctionApp"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   app_settings = {

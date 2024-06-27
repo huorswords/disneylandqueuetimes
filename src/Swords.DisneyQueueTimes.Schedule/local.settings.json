@@ -2,8 +2,9 @@
   "IsEncrypted": false,
   "Values": {
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
-    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "FUNCTIONS_INPROC_NET8_ENABLED": 1,
     "QueueTimesApiOptions:BaseAddress": "https://queue-times.com/",
-    "SynchronizationOptions:ConnectionString": "UseDevelopmentStorage=true"
+    "SynchronizationOptions:ConnectionString": "BlobEndpoint=https://parkswaittimesstor.blob.core.windows.net/;QueueEndpoint=https://parkswaittimesstor.queue.core.windows.net/;FileEndpoint=https://parkswaittimesstor.file.core.windows.net/;TableEndpoint=https://parkswaittimesstor.table.core.windows.net/;SharedAccessSignature=sv=2022-11-02&ss=b&srt=sco&sp=rwdlaciytfx&se=2024-12-01T02:49:32Z&st=2024-06-26T17:49:32Z&spr=https&sig=uFiw4k2AMt1GxujwaqxdQixGBvnbf5BRYfNlZv3IdtI%3D"
   }
 }
